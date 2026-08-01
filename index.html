@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayan's Portfolio - Minecraft Edition</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cursor Glow Effect -->
+    <div id="cursor-glow" class="cursor-glow">
+        <div class="glow-layer glow-large"></div>
+        <div class="glow-layer glow-medium"></div>
+        <div class="glow-layer glow-glass"></div>
+        <div class="glow-layer glow-small"></div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h1 class="sidebar-logo">NAYAN</h1>
+        <nav class="sidebar-nav">
+            <button class="mc-button active" data-section="home">Home</button>
+            <button class="mc-button" data-section="about">About</button>
+            <button class="mc-button" data-section="skills">Skills</button>
+            <button class="mc-button" data-section="projects">Projects</button>
+            <button class="mc-button" data-section="certificates">Certificates</button>
+            <button class="mc-button" data-section="stats">Stats</button>
+            <button class="mc-button" data-section="contact">Contact</button>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Section -->
+        <section id="home" class="section hero-section">
+            <div class="parallax-bg">
+                <div class="parallax-icon">⛏️</div>
+            </div>
+            
+            <div class="hero-content">
+                <div class="hero-avatar-wrapper fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="hero-avatar">
+                        <div class="avatar-glow">
+                            <div class="avatar-glow-inner"></div>
+                        </div>
+                        <div class="avatar-container">
+                            <img src="https://images.unsplash.com/photo-1743247299137-98fc4e9b88b1?w=400" alt="Minecraft Character" class="pixelated">
+                        </div>
+                        <div class="avatar-corner corner-tl"></div>
+                        <div class="avatar-corner corner-tr"></div>
+                        <div class="avatar-corner corner-bl"></div>
+                        <div class="avatar-corner corner-br"></div>
+                    </div>
+                </div>
+                
+                <h1 class="hero-title fade-in-up" style="animation-delay: 0.5s;">
+                    <span class="title-text">NAYAN</span>
+                    <div class="title-glow"></div>
+                </h1>
+                
+                <h2 class="hero-subtitle fade-in-up" style="animation-delay: 0.7s;">
+                    Master Builder & Developer
+                </h2>
+                
+                <p class="hero-description fade-in-up" style="animation-delay: 0.9s;">
+                    Crafting amazing worlds and building incredible creations, one block at a time.
+                </p>
+                
+                <div class="hero-buttons fade-in-up" style="animation-delay: 1.1s;">
+                    <button class="mc-button mc-button-primary" data-scroll-to="projects">View Projects</button>
+                    <button class="mc-button mc-button-secondary" data-scroll-to="contact">Contact Me</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="scroll-reveal">
+                <h2 class="section-title">About Me</h2>
+            </div>
+            
+            <div class="grid grid-cols-2">
+                <div class="scroll-reveal" data-direction="left" data-delay="200">
+                    <div class="mc-card">
+                        <h3 class="mc-card-title">My Story</h3>
+                        <div class="mc-card-content">
+                            <p class="mb-4">
+                                Started my journey in the blocky world of Minecraft in 2011. What began as simple dirt houses has evolved into complex redstone contraptions and massive architectural builds.
+                            </p>
+                            <p>
+                                I specialize in creative building, redstone engineering, and server management. My passion is bringing imagination to life, one block at a time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal" data-direction="right" data-delay="400">
+                    <div class="mc-card">
+                        <h3 class="mc-card-title">Achievements</h3>
+                        <div class="mc-card-content">
+                            <ul class="achievement-list">
+                                <li class="achievement-item">
+                                    <span class="achievement-icon">🏆</span>
+                                    <span>Built over 100+ unique structures</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <span class="achievement-icon">⚡</span>
+                                    <span>Created 50+ redstone contraptions</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <span class="achievement-icon">🌍</span>
+                                    <span>Managed 5+ multiplayer servers</span>
+                                </li>
+                                <li class="achievement-item">
+                                    <span class="achievement-icon">👥</span>
+                                    <span>Collaborated with 1000+ players</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="scroll-reveal">
+                <h2 class="section-title">Skills</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 mb-8">
+                <div class="scroll-reveal" data-direction="left" data-delay="200">
+                    <div class="mc-card">
+                        <h3 class="mc-card-title">Building Skills</h3>
+                        <div class="mc-card-content">
+                            <div class="skill-grid">
+                                <div class="skill-item">
+                                    <span class="skill-icon">🏗️</span>
+                                    <span class="skill-name">Creative Building</span>
+                                </div>
+
+                                <div class="skill-item">
+                                    <span class="skill-icon">🏰</span>
+                                    <span class="skill-name">Architecture</span>
+                                </div>
+
+                                <div class="skill-item">
+                                    <span class="skill-icon">🪑</span>
+                                    <span class="skill-name">Interior Design</span>
+                                </div>
+
+                                <div class="skill-item">
+                                    <span class="skill-icon">🌳</span>
+                                    <span class="skill-name">Landscaping</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-reveal" data-direction="right" data-delay="400">
+                    <div class="mc-card">
+                        <h3 class="mc-card-title">Technical Skills</h3>
+                        <div class="mc-card-content">
+                            <div class="skill-grid">
+                                <div class="skill-item">
+                                    <span class="skill-icon">⚡</span>
+                                    <span class="skill-name">Redstone Engineering</span>
+                                </div>
+
+                                <div class="skill-item">
+                                    <span class="skill-icon">📦</span>
+                                    <span class="skill-name">Command Blocks</span>
+                                </div>
+
+                                <div class="skill-item">
+                                    <span class="skill-icon">🖥️</span>
+                                    <span class="skill-name">Server Management</span>
+                                </div>
+
+                                <div class="skill-item">
+                                    <span class="skill-icon">🔧</span>
+                                    <span class="skill-name">Mod Development</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-reveal" data-delay="600">
+                <div class="mc-card">
+                    <h3 class="mc-card-title">Tools & Technologies</h3>
+                    <div class="mc-card-content">
+                        <div class="tool-grid">
+                            <div class="tool-item"><span class="tool-name">WorldEdit</span></div>
+                            <div class="tool-item"><span class="tool-name">VoxelSniper</span></div>
+                            <div class="tool-item"><span class="tool-name">MCEdit</span></div>
+                            <div class="tool-item"><span class="tool-name">Litematica</span></div>
+                            <div class="tool-item"><span class="tool-name">OptiFine</span></div>
+                            <div class="tool-item"><span class="tool-name">Forge</span></div>
+                            <div class="tool-item"><span class="tool-name">Bukkit</span></div>
+                            <div class="tool-item"><span class="tool-name">Spigot</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="scroll-reveal">
+                <h2 class="section-title">Projects</h2>
+            </div>
+            
+            <div class="grid grid-cols-3">
+                <div class="scroll-reveal" data-delay="0">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1665520937321-5388fb465942?w=400" alt="Redstone Computer" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Redstone Computer</h3>
+                            <p class="project-description">Built a fully functional calculator using redstone circuits and logic gates.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Redstone</span>
+                                <span class="tech-tag">Logic Gates</span>
+                                <span class="tech-tag">Command Blocks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal" data-delay="200">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1688637820628-a5f4b419d909?w=400" alt="Automated Farm" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Automated Farm</h3>
+                            <p class="project-description">Created an efficient automated farming system with villagers and hoppers.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Hoppers</span>
+                                <span class="tech-tag">Observers</span>
+                                <span class="tech-tag">Water Streams</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal" data-delay="400">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1665520937321-5388fb465942?w=400" alt="Castle Build" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Castle Build</h3>
+                            <p class="project-description">Massive medieval castle with working drawbridge and secret passages.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Creative Mode</span>
+                                <span class="tech-tag">WorldEdit</span>
+                                <span class="tech-tag">Custom Textures</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="section">
+            <div class="scroll-reveal">
+                <h2 class="section-title">Certificates</h2>
+            </div>
+            
+            <div class="grid grid-cols-3">
+                <div class="scroll-reveal" data-delay="0">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">🏗️</div>
+                        <h3 class="certificate-title">Master Builder</h3>
+                        <p class="certificate-issuer">Minecraft Academy</p>
+                        <p class="certificate-date">2024</p>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal" data-delay="200">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">⚡</div>
+                        <h3 class="certificate-title">Redstone Engineer</h3>
+                        <p class="certificate-issuer">Circuit Masters</p>
+                        <p class="certificate-date">2023</p>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal" data-delay="400">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">⚔️</div>
+                        <h3 class="certificate-title">Survival Expert</h3>
+                        <p class="certificate-issuer">Hardcore Guild</p>
+                        <p class="certificate-date">2023</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="section">
+            <div class="scroll-reveal">
+                <h2 class="section-title">Current Stats</h2>
+            </div>
+            
+            <div class="grid grid-cols-4 mb-8">
+                <div class="scroll-reveal" data-delay="100">
+                    <div class="stat-block">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-value" style="color: #4A9D4A;">5,420</div>
+                        <div class="stat-label">Hours Played</div>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal" data-delay="200">
+                    <div class="stat-block">
+                        <div class="stat-icon">📦</div>
+                        <div class="stat-value" style="color: #FFD700;">2.4M</div>
+                        <div class="stat-label">Blocks Placed</div>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal" data-delay="300">
+                    <div class="stat-block">
+                        <div class="stat-icon">💎</div>
+                        <div class="stat-value" style="color: #00CED1;">1,337</div>
+                        <div class="stat-label">Diamonds Found</div>
+                    </div>
+                </div>
+                
+                <div class="scroll-reveal" data-delay="400">
+                    <div class="stat-block">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-value" style="color: #FFD700;">95/95</div>
+                        <div class="stat-label">Achievements</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-reveal" data-delay="500">
+                <div class="mc-card">
+                    <h3 class="mc-card-title">Recent Activity</h3>
+                    <div class="mc-card-content">
+                        <div class="activity-feed">
+                            <div class="activity-item">
+                                <span class="activity-icon">⚒️</span>
+                                <div class="activity-content">
+                                    <p class="activity-title">Completed Mega Base Project</p>
+                                    <p class="activity-time">2 days ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <span class="activity-icon">🐉</span>
+                                <div class="activity-content">
+                                    <p class="activity-title">Defeated Ender Dragon (Hardcore)</p>
+                                    <p class="activity-time">5 days ago</p>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <span class="activity-icon">🏗️</span>
+                                <div class="activity-content">
+                                    <p class="activity-title">Built Automated Trading Hall</p>
+                                    <p class="activity-time">1 week ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="scroll-reveal">
+                <h2 class="section-title">Contact</h2>
+            </div>
+            
+            <div style="max-width: 42rem; margin: 0 auto;">
+                <div class="scroll-reveal" data-delay="200">
+                    <div class="mc-card">
+                        <h3 class="mc-card-title">Get In Touch</h3>
+                        <div class="mc-card-content">
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <label class="form-label">Your Name</label>
+                                    <input type="text" class="form-input" placeholder="Enter your name...">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-input" placeholder="your.email@example.com">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Message</label>
+                                    <textarea rows="6" class="form-textarea" placeholder="Tell me about your project..."></textarea>
+                                </div>
+                                
+                                <button type="submit" class="mc-button mc-button-secondary">Send Message</button>
+                            </form>
+                            
+                            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 3px solid #4A4A4A;">
+                                <h4 class="form-label" style="margin-bottom: 1rem;">Connect With Me</h4>
+                                <div class="social-icons">
+                                    <div class="social-icon"><span>📧</span></div>
+                                    <div class="social-icon"><span>💬</span></div>
+                                    <div class="social-icon"><span>🎮</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">Crafted with 💚 in Minecraft</p>
+            <p class="footer-copyright">© 2025 Nayan's Portfolio. All blocks reserved.</p>
+        </footer>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
