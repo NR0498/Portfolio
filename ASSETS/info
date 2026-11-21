@@ -1,0 +1,164 @@
+NAME: NAYAN RAJ
+PROFESSIONAL TITLE: currently a student but add whatever you want according to what i do
+SHORT INTRO (1–2 sentences):
+ABOUT ME (2 paragraphs):
+CURRENT STATUS / availability:
+
+PROFILE PHOTO:
+- Put the image in `ASSETS/` and give me its filename.
+
+SKILLS:
+- Design:
+- Development:
+- Tools:
+
+PROJECT 1:
+- Name:
+- Description:
+- Tech used:
+- GitHub URL:
+- Live URL:
+- Image filename (optional):
+PROJECT 1: - Name: Offline AI Document Intelligence — Local RAG System -
+Description: Built a fully offline document question-answering system
+using OCR/OpenCV preprocessing, Sentence Transformers embeddings,
+FAISS + BM25 hybrid retrieval, and Ollama local LLMs, exposed through
+FastAPI. Improved OCR/text-extraction accuracy from ~40% to ~75%,
+reduced irrelevant responses by ~30%, and achieved sub-1.5-second
+inference latency with zero cloud dependency. - Tech used: Python,
+FastAPI, EasyOCR, OpenCV, NumPy, Sentence Transformers, FAISS, BM25,
+Ollama, RAG - GitHub URL: https://github.com/NR0498/offline-doc-poc -
+Live URL: - Image filename (optional):
+
+PROJECT 2: - Name: AgentPulse — Agentic Distributed Task Orchestration -
+Description: Built an LLM-powered self-healing agent that classifies
+distributed-worker failures such as timeouts, invalid inputs, and
+resource errors, then selects retry, reassignment, or escalation
+actions. Implemented Celery/Redis workers, SQS-compatible decision
+queuing, FastAPI REST endpoints, and a dashboard showing agent decisions
+and confidence scores. - Tech used: Python, LLMs, AI Agents, FastAPI,
+Celery, Redis, AWS SQS-compatible queues, LocalStack, REST APIs - GitHub
+URL: - Live URL: - Image filename (optional):
+
+PROJECT 3: - Name: Spatio-Temporal Climate Anomaly Detection -
+Description: Co-developed an accepted research-paper project for
+resilient geospatial IoT monitoring. Built a hybrid anomaly detector
+combining temporal deviation, KNN-based spatial correlation, and
+rate-of-change signals over 800K+ sensor readings. Benchmarked against
+Isolation Forest, LOF, and One-Class SVM, achieving 0.79 F1 versus 0.40
+for the Isolation Forest baseline. Validated the approach through
+ablation/sensitivity studies and a two-sample t-test (p<0.001), with an
+interactive monitoring dashboard. - Tech used: Python, NumPy, Pandas,
+Scikit-learn, KNN, Isolation Forest, LOF, One-Class SVM, Streamlit,
+statistical testing, IoT data - GitHub URL: - Live URL: - Image filename
+(optional):
+
+PROJECT 4: - Name: SkillDrift — Real-Time Tech Skill Demand Tracker -
+Description: Built a distributed data pipeline using PySpark to ingest
+live job postings and compute per-skill demand drift across time-series
+snapshots. Tracked 25+ skills across 100K+ data points, integrated
+Apache Solr for full-text job search, and used AWS S3 through LocalStack
+for persistent storage of computed trend summaries. Exposed results
+through FastAPI with a live trend dashboard. - Tech used: Python,
+PySpark, Apache Solr, AWS S3, LocalStack, FastAPI, time-series
+analysis - GitHub URL: https://github.com/NR0498/skilldrift - Live URL:
+https://skilldrift.vercel.app - Image filename (optional):
+
+PROJECT 5: - Name: SentinelCI — DevSecOps Automation Pipeline -
+Description: Designed an automated CI/CD security pipeline integrating
+build, testing, SAST/DAST-style security checks, dependency scanning,
+and container scanning using Python, Bash, Docker, and GitHub Actions.
+Added threshold-based build-failure logic and AWS-style integration for
+S3 report archival and SNS build notifications using LocalStack. Built a
+FastAPI + React dashboard for build history, pass/fail trends, and
+critical findings. - Tech used: Python, Bash, Docker, GitHub Actions,
+FastAPI, React, Trivy, pip-audit, AWS S3/SNS, LocalStack,
+Kubernetes/Minikube, Prometheus, Grafana - GitHub URL:
+https://github.com/NR0498/sentinelci - Live URL:
+https://sentinelci-dashboard.vercel.app - Image filename (optional):
+
+PROJECT 6: - Name: JobConnect — Full-Stack Jobs & Internship Platform -
+Description: Built an India-focused job and internship discovery
+platform with secure authentication, database-backed opportunity
+storage, advanced filtering, skill-based discovery, and AI-style
+relevance scoring. Integrated public opportunity APIs such as The Muse,
+Remotive, and Jobicy through automated aggregation pipelines to surface
+live internships, full-time, startup, and research opportunities.
+Prepared the application for deployment with production-ready API
+routing and scheduled synchronization workflows. - Tech used: React,
+TypeScript, Tailwind CSS, Vite, Redux, Node.js, Express.js, PostgreSQL,
+Drizzle ORM, CI/CD, serverless database - GitHub URL:
+https://github.com/NR0498/jobconnect - Live URL:
+https://jobconnect-olive.vercel.app - Image filename (optional):
+
+PROJECT 7: - Name: FLYDEMAND — AI-Powered Airline Demand Analysis
+Dashboard - Description: Built an AI-powered airline demand analysis
+dashboard combining live aviation data with interactive analytics and
+LLM-assisted insights. Integrated AviationStack and OpenFlights data,
+used Streamlit and Plotly for visualization, and applied caching and
+modular architecture to reduce API load by 40% and improve processing
+efficiency by 35%. - Tech used: Python, Streamlit, Plotly, GPT-4o-mini,
+AviationStack API, OpenFlights API, Pandas, caching/optimization -
+GitHub URL: - Live URL: - Image filename (optional):
+
+PROJECT 8: - Name: Mission Control System for Autonomous Surface Vehicle
+(ASV) - Description: Engineered an end-to-end mission-control system for
+an Autonomous Surface Vehicle during the NIOT Ocean Electronics
+internship. Built a Python/PyQt5 interface for live GPS/NMEA telemetry,
+real-time map tracking, waypoint control, sensor visualization, and
+mission logging. Integrated Arduino/LoRa hardware and automated
+telemetry processing/post-mission analytics, achieving 97%+ GPS
+path-tracking accuracy through calibration and statistical validation. -
+Tech used: Python, PyQt5, Arduino, LoRa, GPS/NMEA, HTML,
+JavaScript/Leaflet, Bash, serial communication - GitHub URL: - Live
+URL: - Image filename (optional):
+
+PROJECT 9: - Name: Coral-Reef / Underwater Image Classification -
+Description: Prototyped an underwater-image classification system during
+the NIOT internship to label coral-reef imagery. The work explored
+applied computer vision for underwater imagery alongside the autonomous
+surface-vehicle mission-control and telemetry workflows. - Tech used:
+Python, OpenCV, machine learning, image classification - GitHub URL: -
+Live URL: - Image filename (optional):
+
+PROJECT 10: - Name: Waste Detection in Water Bodies Using Satellite
+Images - Description: Processed satellite-image datasets for
+environmental analysis and investigated automated detection of waste
+clusters in water bodies. Used image preprocessing and feature
+extraction including NDWI, followed by classification approaches to
+identify potentially polluted/waste regions. - Tech used: Python,
+OpenCV, Google Earth Engine, NDWI, image processing, classification -
+GitHub URL: - Live URL: - Image filename (optional):
+
+PROJECT 11: - Name: CubeSat Onboard Computing — SRMSAT Avionics Design
+Study - Description: Studied the onboard-computing architecture of a
+CubeSat, including ARM Cortex-M controller options, RTOS scheduling, and
+interfaces between the onboard computer and telemetry/command and
+attitude-control subsystems. The work focused on embedded-system
+architecture and avionics design considerations. - Tech used: ARM
+Cortex-M, RTOS, embedded systems, C/C++, CubeSat avionics,
+telemetry/command interfaces - GitHub URL: - Live URL: - Image filename
+
+CERTIFICATES / EDUCATION:
+- Title, organization, year, credential URL (optional):
+
+LATEST UPDATE / BLOG (optional):
+- Title:
+- Summary:
+- URL:
+
+LINKS:
+- GitHub: https://github.com/NR0498
+- LinkedIn: https://github.com/NR0498
+- Resume URL/file: 
+- Instagram/other (optional): 
+
+CONTACT:
+- Confirm email: `nayanraj083@gmail.com`
+- Phone number to show? (yes/no): yes ( +91 9389271756)
+- 
+
+DEPLOYMENT:
+- Preferred Vercel project name:
+- Custom domain, if you have one: 
+- Resend configured in Vercel? (yes/no)

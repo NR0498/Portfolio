@@ -5,9 +5,10 @@ interface ProjectCardProps {
   description: string;
   image: string;
   technologies: string[];
+  projectUrl: string;
 }
 
-export function ProjectCard({ title, description, image, technologies }: ProjectCardProps) {
+export function ProjectCard({ title, description, image, technologies, projectUrl }: ProjectCardProps) {
   return (
     <div
       className="bg-[#07080F] border-[3px] border-[#00D4FF]/40 overflow-hidden hover:border-[#00D4FF] hover:-translate-y-1 transition-all duration-200 relative group"
@@ -35,7 +36,7 @@ export function ProjectCard({ title, description, image, technologies }: Project
             </span>
           ))}
         </div>
-        <MinecraftButton variant="secondary">View Project</MinecraftButton>
+        <a href={projectUrl} target="_blank" rel="noreferrer" className="block"><MinecraftButton variant="secondary">View Project</MinecraftButton></a>
       </div>
     </div>
   );

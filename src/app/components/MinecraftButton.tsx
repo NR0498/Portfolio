@@ -2,11 +2,13 @@ interface MinecraftButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
   active?: boolean;
+  disabled?: boolean;
+  type?: 'button' | 'submit';
   variant?: 'primary' | 'secondary' | 'danger';
 }
 
-export function MinecraftButton({ children, onClick, active, variant = 'primary' }: MinecraftButtonProps) {
-  const base = "relative px-6 py-3 transition-all duration-100 cursor-pointer select-none active:translate-x-[2px] active:translate-y-[2px] w-full";
+export function MinecraftButton({ children, onClick, active, disabled = false, type = 'button', variant = 'primary' }: MinecraftButtonProps) {
+  const base = "relative w-full cursor-pointer select-none px-6 py-3 transition-all duration-100 active:translate-x-[2px] active:translate-y-[2px] disabled:cursor-not-allowed disabled:opacity-60 disabled:active:translate-x-0 disabled:active:translate-y-0";
 
   const styles = {
     primary: active
@@ -26,7 +28,9 @@ export function MinecraftButton({ children, onClick, active, variant = 'primary'
 
   return (
     <button
+      type={type}
       onClick={onClick}
+      disabled={disabled}
       className={`${base} ${styles[variant]}`}
       style={{ boxShadow: shadows[variant] }}
     >

@@ -1,82 +1,57 @@
+import { navigationItems } from '../portfolioData';
+
 interface SidebarProps {
-  onNavigate: (section: string) => void;
   activeSection: string;
+  brand: string;
+  onNavigate: (section: string) => void;
 }
 
-const sections = [
-  { id: 'home',         label: 'HOME'     },
-  { id: 'about',        label: 'ABOUT.ME' },
-  { id: 'skills',       label: 'SKILLS'   },
-  { id: 'projects',     label: 'PROJECTS' },
-  { id: 'certificates', label: 'CERTS'    },
-  { id: 'stats',        label: 'BLOG'     },
-  { id: 'contact',      label: 'CONTACT'  },
-];
-
-export function Sidebar({ onNavigate, activeSection }: SidebarProps) {
-  return (
-    <aside
-      className="fixed left-0 top-0 h-screen w-64 bg-[#050810] border-r-[3px] border-[#FF6B00]/30 z-50 overflow-y-auto"
-      style={{ boxShadow: '4px 0 24px rgba(255,107,0,0.07)' }}
-    >
-      {/* Scanline */}
-      <div className="absolute inset-0 pointer-events-none"
-        style={{ background: 'repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,255,255,0.008) 3px, rgba(255,255,255,0.008) 4px)' }} />
-
-      <div className="p-6 relative z-10">
-        {/* Logo */}
-        <div className="mb-8 pb-6 border-b-[2px] border-[#FF6B00]/20">
-          <span className="font-['Press_Start_2P'] text-[8px] text-[#FF6B00]/40 tracking-widest">// INIT_PORT</span>
-          <h1
-            className="font-['Press_Start_2P'] text-xl mt-2"
-            style={{ color: '#FF6B00', textShadow: '0 0 14px rgba(255,107,0,0.7), 3px 3px 0px #993F00' }}
+export function Sidebar({ activeSection, brand, onNavigate }: SidebarProps) {
+  const navigation = (
+    <nav aria-label="Primary navigation" className="flex gap-2 md:block md:space-y-3">
+      {navigationItems.map((item) => {
+        const isActive = activeSection === item.id;
+        return (
+          <button
+            key={item.id}
+            type="button"
+            onClick={() => onNavigate(item.id)}
+            aria-current={isActive ? 'page' : undefined}
+            className={`shrink-0 border-[2px] px-3 py-2 text-left transition md:w-full md:px-4 md:py-3 ${
+              isActive
+                ? 'border-[#FF6B00] bg-[#1A0A00] text-[#FF6B00]'
+                : 'border-[#FF6B00]/25 text-[#FFB366]/70 hover:border-[#FF6B00]/65 hover:bg-[#0F0600]'
+            }`}
+            style={{ boxShadow: isActive ? '3px 3px 0 #993F00' : undefined }}
           >
-            NAYAN
-          </h1>
-          <div className="mt-2 h-[2px] w-full" style={{ background: 'linear-gradient(to right, #FF6B00, #00D4FF, transparent)' }} />
-          <p className="font-['Press_Start_2P'] text-[#00D4FF]/50 text-[8px] mt-2 tracking-wider">PORTFOLIO.EXE</p>
-        </div>
+            <span className="font-['Press_Start_2P'] text-[8px] tracking-wide">&gt; {item.label}</span>
+          </button>
+        );
+      })}
+    </nav>
+  );
 
-        {/* Nav */}
-        <nav className="space-y-3">
-          {sections.map((s) => (
-            <button
-              key={s.id}
-              onClick={() => onNavigate(s.id)}
-              className={`w-full text-left px-4 py-3 border-[2px] transition-all duration-150 group relative overflow-hidden
-                ${activeSection === s.id
-                  ? 'border-[#FF6B00] bg-[#1A0A00] text-[#FF6B00]'
-                  : 'border-[#FF6B00]/18 bg-transparent text-[#FFB366]/35 hover:border-[#FF6B00]/55 hover:text-[#FFB366]/70 hover:bg-[#0F0600]'
-                }`}
-              style={{ boxShadow: activeSection === s.id ? '3px 3px 0px #993F00' : 'none' }}
-            >
-              {activeSection === s.id && (
-                <div className="absolute inset-0 pointer-events-none"
-                  style={{ background: 'repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255,107,0,0.025) 3px, rgba(255,107,0,0.025) 4px)' }} />
-              )}
-              <span className="font-['Press_Start_2P'] text-[9px] tracking-wider relative z-10 flex items-center gap-2">
-                <span className={activeSection === s.id ? 'text-[#FF6B00]' : 'text-[#FF6B00]/25 group-hover:text-[#FF6B00]/50'}>
-                  &gt;
-                </span>
-                {s.label}
-              </span>
-            </button>
-          ))}
-        </nav>
-
-        {/* Status */}
-        <div className="mt-8 pt-6 border-t-[2px] border-[#00D4FF]/15">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-2 h-2 bg-[#00FFD4] animate-pulse" />
-            <span className="font-['Press_Start_2P'] text-[8px] text-[#00FFD4]/60">ONLINE</span>
-          </div>
-          <div className="flex gap-3">
-            {['#FF6B00','#00D4FF','#FFCC00'].map((c) => (
-              <div key={c} className="w-4 h-4 border-2 border-black/50" style={{ backgroundColor: c }} />
-            ))}
-          </div>
+  return (
+    <>
+      <header className="fixed inset-x-0 top-0 z-50 border-b-[3px] border-[#FF6B00]/35 bg-[#050810]/95 px-4 py-3 backdrop-blur md:hidden">
+        <div className="mb-3 flex items-center justify-between">
+          <span className="font-['Press_Start_2P'] text-xs text-[#FF6B00]" style={{ textShadow: '2px 2px 0 #993F00' }}>{brand}</span>
+          <span className="font-['Press_Start_2P'] text-[7px] text-[#00FFD4]">● ONLINE</span>
         </div>
-      </div>
-    </aside>
+        <div className="overflow-x-auto pb-1">{navigation}</div>
+      </header>
+
+      <aside className="fixed left-0 top-0 z-50 hidden h-screen w-64 overflow-y-auto border-r-[3px] border-[#FF6B00]/30 bg-[#050810] md:block" style={{ boxShadow: '4px 0 24px rgba(255,107,0,0.07)' }}>
+        <div className="p-6">
+          <div className="mb-8 border-b-[2px] border-[#FF6B00]/20 pb-6">
+            <p className="font-['Press_Start_2P'] text-[8px] text-[#FF6B00]/60">// PORTFOLIO.EXE</p>
+            <h1 className="font-['Press_Start_2P'] mt-3 text-xl text-[#FF6B00]" style={{ textShadow: '3px 3px 0 #993F00' }}>{brand}</h1>
+            <div className="mt-3 h-[2px]" style={{ background: 'linear-gradient(to right, #FF6B00, #00D4FF, transparent)' }} />
+          </div>
+          {navigation}
+          <div className="mt-8 border-t-[2px] border-[#00D4FF]/20 pt-5"><p className="font-['Press_Start_2P'] text-[8px] text-[#00FFD4]"><span className="animate-pulse">●</span> ONLINE</p></div>
+        </div>
+      </aside>
+    </>
   );
 }

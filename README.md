@@ -1,5 +1,27 @@
 # Minecraft-Themed Portfolio
 
+## Quick Start: Personalize and Deploy
+
+1. Edit `src/app/portfolioData.ts` to change your name, introduction, skills, projects, certificates, writing, email, and social links. The file includes comments for each content area.
+2. Run `npm install` once, then `npm run dev` to preview locally.
+3. Run `npm run build` before deploying. The finished static site is written to `dist/`.
+4. Push this folder to a Git repository and import it in Vercel. Vercel automatically uses `npm run build` and publishes `dist/` through `vercel.json`.
+
+The contact form sends real notifications after the Vercel environment variables below are configured. Its email link also works immediately as a fallback.
+
+### Contact Form Notifications
+
+The contact form now sends an email notification through `api/contact.ts` when deployed to Vercel. To activate it:
+
+1. Create a [Resend](https://resend.com) account and create an API key.
+2. In Vercel, open the project, then go to **Settings → Environment Variables**.
+3. Add the three variables listed in `.env.example`: `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL`.
+4. For testing, use `Your Portfolio <onboarding@resend.dev>` as `CONTACT_FROM_EMAIL`. Resend will only send test messages to your registered inbox.
+5. For public use, verify your own domain in Resend and replace the sender address with your verified email domain.
+6. Redeploy the site. Every completed contact form will then send you an email with a Reply-To address set to the visitor's email.
+
+The API key is kept server-side in Vercel and is never exposed to site visitors.
+
 A pixel-perfect, Minecraft-inspired personal portfolio website built with React, TypeScript, and Tailwind CSS. This portfolio features smooth animations, custom Minecraft-style UI components, and a retro gaming aesthetic.
 
 ![Portfolio Preview](https://images.unsplash.com/photo-1665520937321-5388fb465942?w=800)
