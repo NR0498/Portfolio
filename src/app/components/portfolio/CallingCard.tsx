@@ -4,17 +4,21 @@ import { portfolio } from '../../portfolioData';
 const MONOGRAM = ['f..f.ccc.', 'ff.f.c..c', 'f.ff.ccc.', 'f..f.c.c.', 'f..f.c..c'].join('').split('');
 
 interface CallingCardProps {
+  /** Called when the card starts its exit — the site begins fading in underneath. */
+  onLeave: () => void;
+  /** Called once the exit animation has finished. */
   onDone: () => void;
 }
 
-export function CallingCard({ onDone }: CallingCardProps) {
+export function CallingCard({ onLeave, onDone }: CallingCardProps) {
   const [leaving, setLeaving] = useState(false);
   const [flipped, setFlipped] = useState(false);
 
   function start() {
     if (leaving) return;
     setLeaving(true);
-    window.setTimeout(onDone, 850);
+    onLeave();
+    window.setTimeout(onDone, 900);
   }
 
   useEffect(() => {

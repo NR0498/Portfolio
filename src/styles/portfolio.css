@@ -292,7 +292,21 @@ a:hover { color: var(--cy); }
 .hidden-field { position: absolute; left: -9999px; }
 
 /* ---------- calling card intro ---------- */
-.intro { position: fixed; inset: 0; z-index: 200; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 34px; background: rgba(3,5,10,.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); animation: fadein .4s ease both; }
+.intro { position: fixed; inset: 0; z-index: 200; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 34px; background:
+    radial-gradient(circle at 50% 45%, rgba(255,107,0,.14), transparent 45%),
+    radial-gradient(circle at 70% 70%, rgba(0,212,255,.08), transparent 40%),
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--bg); }
+
+/* The site stays hidden until the calling card is dismissed, then fades in.
+   Opacity only — a transform/filter here would break the fixed sidebar. */
+.site { opacity: 0; visibility: hidden; }
+.site.ready { opacity: 1; visibility: visible; transition: opacity .9s ease .15s, visibility 0s; }
+.site.ready .side { animation: sidein .8s cubic-bezier(.2,.8,.2,1) .2s both; }
+.site.ready .mtop { animation: topin .7s cubic-bezier(.2,.8,.2,1) .2s both; }
+@keyframes sidein { from { transform: translateX(-100%); } }
+@keyframes topin { from { transform: translateY(-100%); } }
 .intro.leaving { animation: fadeout .6s ease .25s both; }
 @keyframes fadein { from { opacity: 0; } }
 @keyframes fadeout { to { opacity: 0; visibility: hidden; } }

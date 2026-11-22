@@ -20,9 +20,12 @@ function scrollToSection(id: string) {
 }
 
 /** Re-triggering scroll reveals, active-nav tracking, XP bar, scene fades, parallax and cursor glow. */
-function useScrollEffects(setActive: (id: string) => void) {
+function useScrollEffects(setActive: (id: string) => void, enabled: boolean) {
   useEffect(() => {
+    if (!enabled) return;
     const reveals = Array.from(document.querySelectorAll<HTMLElement>('.rv'));
+    // Reset so everything in view animates in fresh after the calling card.
+    reveals.forEach((el) => el.classList.remove('in'));
     const groups = new Map<Element | null, number>();
     reveals.forEach((el) => {
       const i = groups.get(el.parentElement) ?? 0;
@@ -64,7 +67,7 @@ function useScrollEffects(setActive: (id: string) => void) {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('mousemove', onMove);
     };
-  }, [setActive]);
+  }, [setActive, enabled]);
 }
 
 function NavButtons({ active }: { active: string }) {
@@ -81,14 +84,25 @@ function NavButtons({ active }: { active: string }) {
 
 export default function App() {
   const [active, setActive] = useState('home');
-  const [showCard, setShowCard] = useState(() => !window.location.hash.includes('skipintro'));
+  // 'card': only the calling card is visible · 'leaving': card exits while the site fades in · 'done'
+  const [intro, setIntro] = useState<'card' | 'leaving' | 'done'>(() => (window.location.hash.includes('skipintro') ? 'done' : 'card'));
   const [formNotice, setFormNotice] = useState('');
   const [sending, setSending] = useState(false);
-  useScrollEffects(setActive);
+  const siteVisible = intro !== 'card';
+  useScrollEffects(setActive, siteVisible);
+
+  // Lock scrolling while the card is up so the hidden page can't move underneath it.
+  useEffect(() => {
+    if (siteVisible) return;
+    window.scrollTo(0, 0);
+    const root = document.documentElement;
+    const prev = root.style.overflow;
+    root.style.overflow = 'hidden';
+    return () => { root.style.overflow = prev; };
+  }, [siteVisible]);
 
   function replayCard() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setShowCard(true);
+    setIntro('card');
   }
 
   async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
@@ -118,6 +132,7 @@ export default function App() {
 
   return (
     <div className="root">
+      <div className={`site${siteVisible ? ' ready' : ''}`} aria-hidden={!siteVisible}>
       {/* BACKGROUND */}
       <div className="bgfx">
         {[0, 1, 2, 3].map((i) => <div key={i} className={`scene sc${i + 1}`} data-scene={i} />)}
@@ -236,7 +251,7 @@ export default function App() {
               </div>
               <h3 className="px">{current.title}</h3>
               <div className="px focus">{current.focus}</div>
-              <div className="px org ph">{current.org}</div>
+              <div className="px org">{current.org}</div>
               <ul>{current.bullets.map((b) => <li key={b} className="body">{b}</li>)}</ul>
               <div className="tags">{current.tags.map((t) => <span key={t} className="px tg">{t}</span>)}</div>
             </div>
@@ -333,8 +348,9 @@ export default function App() {
           <p className="px" style={{ fontSize: 7, color: 'rgba(255,255,255,.4)', margin: '14px 0 0' }}>© {new Date().getFullYear()} {portfolio.name}. ALL RIGHTS RESERVED.</p>
         </footer>
       </main>
+      </div>
 
-      {showCard && <CallingCard onDone={() => setShowCard(false)} />}
+      {intro !== 'done' && <CallingCard onLeave={() => setIntro('leaving')} onDone={() => setIntro('done')} />}
     </div>
   );
 }

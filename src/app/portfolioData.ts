@@ -15,15 +15,15 @@ export const portfolio = {
   name: 'NAYAN RAJ',
   shortName: 'NAYAN.RAJ',
   role: 'AI / ML ENGINEER · ROBOTICS · FULL-STACK',
-  tagline: 'Student engineer building offline AI systems, autonomous vehicles and the full-stack tools around them.',
-  status: 'CURRENTLY INTERNING · OPEN TO OPPORTUNITIES',
+  tagline: 'B.Tech CSE student at SRM Institute of Science and Technology, building practical systems across AI/ML, computer vision, robotics and full-stack development.',
+  status: 'B.TECH CSE · SRM · MAY 2027 · SDE INTERN @ SPRITLE SOFTWARE',
   // Drop your photo in ASSETS/ and import it here, e.g. import photo from '../../ASSETS/photo.jpg'
   photo: '' as string,
 
   about: {
     paragraphs: [
-      "I'm Nayan, a student engineer who likes building AI that has to work in the real world: offline, on hardware, or at the end of a robot's gripper. Right now I'm a Software Development Engineer intern in physical AI, building perception pipelines that turn a language prompt into 3D object coordinates and wiring them into pick-and-place on a LeRobot SO-101 arm and OpenArm in MuJoCo.",
-      'Before that I built mission-control software for an autonomous surface vehicle at NIOT and co-developed an accepted research project on spatio-temporal climate anomaly detection. Along the way I have shipped full-stack products like JobConnect and DevSecOps tooling like SentinelCI. I enjoy owning a system end to end, from the model to the dashboard people actually use.',
+      'I am a 2027 B.Tech Computer Science and Engineering student at SRM Institute of Science and Technology with a strong interest in building real-world software and AI systems. My work spans offline RAG and document intelligence, anomaly detection, distributed AI agents, data engineering, DevSecOps, full-stack applications, embedded/IoT systems, and computer vision.',
+      'I enjoy taking systems from an idea or research problem to something that can actually be tested, measured, and used. I have worked on applied AI research, autonomous surface-vehicle mission control, robotics perception and manipulation, and production-style software pipelines, with a focus on Python, APIs, Linux, model evaluation, debugging, and system integration.',
     ],
     highlights: [
       { icon: '⚙', text: 'Building language-to-3D perception and VLA pick-and-place for robot arms' },
@@ -72,7 +72,7 @@ export const portfolio = {
       when: '[ START DATE ] — PRESENT',
       title: 'SOFTWARE DEVELOPMENT ENGINEER INTERN',
       focus: 'PHYSICAL AI · 3D PERCEPTION · VLM / VLA',
-      org: '[ COMPANY NAME ] · [ LOCATION ]',
+      org: 'SPRITLE SOFTWARE',
       bullets: [
         'Developing Python RGB-D perception pipelines that map language prompts to 3D object coordinates using Grounding DINO, SAM and Depth Anything V2, and evaluating depth error on held-out benchmarks.',
         'Integrating hand-eye calibration and inverse-kinematics pick-and-place on a LeRobot SO-101 arm, tested in simulation first.',
