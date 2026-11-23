@@ -6,6 +6,7 @@
  */
 import jobConnectImg from '../../ASSETS/JobConnect.png';
 import sentinelImg from '../../ASSETS/sentinelci.png';
+import aquadocImg from '../../ASSETS/aquadoc.png';
 
 export type Accent = 'a-or' | 'a-cy' | 'a-am' | 'a-te';
 
@@ -123,9 +124,9 @@ export const portfolio = {
     { title: 'Coral-Reef Underwater Image Classification', glyph: '◉', cat: 'VISION', accent: 'a-cy' as Accent, image: '',
       desc: 'Prototyped an underwater-image classification system at NIOT to label coral-reef imagery, applying computer vision to underwater data alongside the ASV mission-control and telemetry work.',
       tech: ['PYTHON', 'OPENCV', 'ML', 'CLASSIFICATION'], github: '', live: '' },
-    { title: 'Waste Detection in Water Bodies (Satellite)', glyph: '◇', cat: 'REMOTE SENSING', accent: 'a-te' as Accent, image: '',
-      desc: 'Processed satellite imagery to detect waste clusters in water bodies using preprocessing and NDWI feature extraction, followed by classification to flag potentially polluted regions.',
-      tech: ['PYTHON', 'OPENCV', 'EARTH ENGINE', 'NDWI'], github: '', live: '' },
+    { title: 'AquaDoc — Satellite Water-Quality Analysis', glyph: '◇', cat: 'REMOTE SENSING', accent: 'a-te' as Accent, image: aquadocImg,
+      desc: 'Checks the health of any lake, reservoir or river from space. Pulls the latest clear Sentinel-2 scene, masks clouds, shadows and shoreline, then estimates chlorophyll-a, suspended solids, turbidity, Secchi depth and CDOM pixel by pixel with a neural-network ensemble trained on GLORIA. A transparent 7-stage pipeline streams live to the dashboard, and every estimate ships with an uncertainty range.',
+      tech: ['PYTHON', 'SENTINEL-2', 'RASTERIO / GDAL', 'NUMPY', 'FASTAPI', 'SSE', 'POSTGRESQL', 'NEXT.JS', 'MAPLIBRE'], github: '', live: '' },
   ],
 
   certificates: [
